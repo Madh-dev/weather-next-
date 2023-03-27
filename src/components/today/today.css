@@ -1,0 +1,15 @@
+.today{
+    display: flex;
+    gap:2rem;
+    color:white;
+    justify-content: center;
+    margin-top: 50px;
+}
+.today .today-special-card{
+    height: 200px;
+    border:none;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 9px;
+    background: linear-gradient(130deg,#b588f7,#1de5e2);
+}
