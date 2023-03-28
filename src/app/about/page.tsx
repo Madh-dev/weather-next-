@@ -1,4 +1,4 @@
-import data, { foreC } from '@/components/data'
+import  { foreC } from '@/components/data'
 import Link from 'next/link';
 import React from 'react'
 import SemiCircleProgressBar from "react-progressbar-semicircle";
@@ -25,7 +25,7 @@ const page = () => {
           <p className={style.ptb}>Average Humidity: {cast?.day?.avghumidity}</p>
         </div>
       ))
-      }
+      }                   
     </div>
     </>
   )

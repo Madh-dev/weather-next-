@@ -1,58 +1,3 @@
- const data = {
-    "location": {
-        "name": "Ogbomoso",
-        "region": "Delta",
-        "country": "Nigeria",
-        "lat": 8.13,
-        "lon": 4.27,
-        "tz_id": "Africa/Lagos",
-        "localtime_epoch": 1679835903,
-        "localtime": "2023-03-26 14:05"
-    },
-    "current": {
-        "last_updated_epoch": 1679835600,
-        "last_updated": "2023-03-26 14:00",
-        "temp_c": 35.5,
-        "temp_f": 95.9,
-        "is_day": 1,
-        "condition": {
-            "text": "Sunny",
-            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
-            "code": 1000
-        },
-        "wind_mph": 4.3,
-        "wind_kph": 6.8,
-        "wind_degree": 135,
-        "wind_dir": "SE",
-        "pressure_mb": 1009.0,
-        "pressure_in": 29.8,
-        "precip_mm": 0.0,
-        "precip_in": 0.0,
-        "humidity": 37,
-        "cloud": 25,
-        "feelslike_c": 38.0,
-        "feelslike_f": 100.4,
-        "vis_km": 10.0,
-        "vis_miles": 6.0,
-        "uv": 9.0,
-        "gust_mph": 4.9,
-        "gust_kph": 7.9,
-        "air_quality": {
-            "co": 494.0,
-            "no2": 2.0999999046325684,
-            "o3": 20.200000762939453,
-            "so2": 1.399999976158142,
-            "pm2_5": 7.099999904632568,
-            "pm10": 12.5,
-            "us-epa-index": 1,
-            "gb-defra-index": 1
-        }
-    }
-    }
-
-    export default data
-
-
     export const foreC = {
         "location": {
             "name": "Ogbomoso",
@@ -8198,3 +8143,35 @@
             ]
         }
     }
+
+
+   export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top' as const,
+    },
+    title: {
+      display: true,
+      text: 'Chart.js Line Chart',
+    },
+  },
+};
+
+// export const dataFn = (labels,foreC) 
+const labels =  foreC?.forecast?.forecastday[0]?.hour?.map(cool =>(
+     cool?.time.substring(11)
+  ) ) ;
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Hourly average temperature',
+      data:  foreC?.forecast?.forecastday[0]?.hour?.map(cool =>(
+     cool.temp_c 
+  ) ),
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    }
+  ],
+};

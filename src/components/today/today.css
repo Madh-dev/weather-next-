@@ -13,3 +13,7 @@
     border-radius: 9px;
     background: linear-gradient(130deg,#b588f7,#1de5e2);
 }
+.line-chart{
+    width: 500px;
+    height: 400px;
+}
