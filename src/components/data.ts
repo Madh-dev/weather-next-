@@ -8152,8 +8152,8 @@
       position: 'top' as const,
     },
     title: {
-      display: true,
-      text: 'Chart.js Line Chart',
+      display: false,
+      text: 'Temperature Line Chart',
     },
   },
 };
@@ -8162,16 +8162,29 @@
 const labels =  foreC?.forecast?.forecastday[0]?.hour?.map(cool =>(
      cool?.time.substring(11)
   ) ) ;
-export const data = {
+export const tempData = {
   labels,
   datasets: [
     {
-      label: 'Hourly average temperature',
+      label: 'Temperature Line Chart',
       data:  foreC?.forecast?.forecastday[0]?.hour?.map(cool =>(
      cool.temp_c 
   ) ),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      borderColor: 'rgb(255, 255, 255)',
+      backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    }
+  ],
+};
+export const windData = {
+  labels,
+  datasets: [
+    {
+      label: 'Wind Line Chart',
+      data:  foreC?.forecast?.forecastday[0]?.hour?.map(cool =>(
+     cool.wind_kph 
+  ) ),
+      borderColor: 'rgb(255, 255, 255)',
+      backgroundColor: 'rgba(255, 255, 255, 0.5)',
     }
   ],
 };

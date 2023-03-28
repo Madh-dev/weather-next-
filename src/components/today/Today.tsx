@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { foreC,options,data } from '../data';
+import { foreC,options,tempData,windData } from '../data';
 import SemiCircleProgressBar from "react-progressbar-semicircle";
 import './today.css'
 import Link from 'next/link';
@@ -28,10 +28,6 @@ ChartJS.register(
 
 
 const Today = () => {
-const tempArr =  foreC?.forecast?.forecastday[0]?.hour?.map(cool =>(
-     cool.temp_c 
-  ) );
-  console.log(tempArr)
 
   return (
     <>
@@ -67,7 +63,10 @@ const tempArr =  foreC?.forecast?.forecastday[0]?.hour?.map(cool =>(
         
     </div>
       <div   className='line-chart'>
-        <Line options={options} data={data} />;
+        <Line options={options} data={tempData} />;
+      </div>
+       <div   className='line-chart'>
+        <Line options={options} data={tempData} />;
       </div>
     
     </>
