@@ -14,7 +14,12 @@
     background: linear-gradient(130deg,#b588f7,#1de5e2);
 }
 .line-chart{
+    display:flex;
+    flex: 0 0 45%;
+    gap: 4rem;
+}
+/* .Tline-chart,.Wline-chart{
     width: 500px;
     height: 400px;
     
-}
+} */

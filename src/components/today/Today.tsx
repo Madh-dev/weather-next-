@@ -62,13 +62,14 @@ const Today = () => {
      
         
     </div>
-      <div   className='line-chart'>
+    <div className='line-chart'>
+      <div   className='Tline-chart'>
         <Line options={options} data={tempData} />;
       </div>
-       <div   className='line-chart'>
-        <Line options={options} data={tempData} />;
+       <div   className='Wline-chart'>
+        <Line options={options} data={windData} />;
       </div>
-    
+      </div>
     </>
   )
 }
