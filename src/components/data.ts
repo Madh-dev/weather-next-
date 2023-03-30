@@ -1,4 +1,5 @@
-    export const foreC = {
+//   const baseUrl = http://api.weatherapi.com/v1/forecast.json?key=dbe935db8b394a35b01235629232003&q=ogbomoso&days=7&aqi=yes&alerts=yes;
+  export const foreC = {
         "location": {
             "name": "Ogbomoso",
             "region": "Delta",
@@ -8146,6 +8147,20 @@
 
 
    export const options = {
+    scales: {
+        yAxes: [{
+          ticks: {
+            fontColor: '#555',
+            fontSize: 14,
+          },
+        }],
+        xAxes: [{
+          ticks: {
+            fontColor: '#555',
+            fontSize: 14,
+          },
+        }],
+      },
   responsive: true,
   plugins: {
     legend: {
